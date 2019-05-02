@@ -3,8 +3,8 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo"><i class="material-icons">cloud</i>Blog</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Sign in</a></li>
-        <li><a href="#">Sing out</a></li>
+        <li><%= link_to "Sing in", new_user_session_path, method: :get  %></li>
+        <li><%= link_to "Sing out", destroy_user_session_path, method: :delete %></li>
         <li><a href="#">My Page</a></li>
       </ul>
     </div>
