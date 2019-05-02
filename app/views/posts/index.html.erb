@@ -1,7 +1,8 @@
 <div class="container"> <!-- 幅とmargin指定する -->
   <div class="row"> <!-- 行を作る -->
-    <div class="col s12 m7">
+    <div class="col s12 m8">
       <h2>It works!!</h2>
+      <%= render partial: "posts/post", collection: @posts %>
     </div>
   </div>
 </div>
