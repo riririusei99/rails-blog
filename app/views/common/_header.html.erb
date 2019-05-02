@@ -1,11 +1,11 @@
 <header>
   <nav class="#42a5f5 blue lighten-1">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><i class="material-icons">cloud</i>Blog</a>
+      <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Blog</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to "Sing in", new_user_session_path, method: :get  %></li>
         <li><%= link_to "Sing out", destroy_user_session_path, method: :delete %></li>
-        <li><a href="#">My Page</a></li>
+        <li><%= link_to "My Page", "users/#{current_user.id}", method: :get %></a></li>
       </ul>
     </div>
   </nav>
