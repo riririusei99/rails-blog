@@ -2,6 +2,7 @@
   <div class="row"> <!-- 行を作る -->
     <div class="col s12 m8">
       <%= render partial: "posts/post", collection: @posts %>
+      <%= paginate(@posts) %>
     </div>
   </div>
 </div>
