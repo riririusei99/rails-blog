@@ -17,6 +17,10 @@
   </head>
   <body>
     <%= render partial: 'common/header' %>
+    <div class="message-area">
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>
