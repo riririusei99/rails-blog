@@ -8,7 +8,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  
+
   def create
+    Post.create(create_params)
+  end
+
+  private
+  def create_params
+    params.require(:post).permit(:title, :post).merge(user_id: current_user.id)
   end
 end
