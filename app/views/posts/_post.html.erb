@@ -8,10 +8,10 @@
         </div>
         
         <div class="card-action right-align">
-          <%= link_to "More", post_path(post) %>
+          <%= link_to "Show", post_path(post) %>
           <%= link_to "Edit", edit_post_path(post) %>
+          <%= link_to "Delete", "/posts/#{post.id}", method: :delete %>
         </div>
-
       </div>
     </div>
   </div>
