@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.all.page(params[:page]).per(5)
+    @posts = Post.order('created_at DESC').page(params[:page]).per(5)
   end
   
   def show
