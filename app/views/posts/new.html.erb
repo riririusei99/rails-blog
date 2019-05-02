@@ -1,12 +1,12 @@
 <div class="container"> <!-- 幅とmargin指定する -->
   <div class="row">
-        <%= form_tag('/posts', :method => :post) do %>
+      <%= form_for(@post) do |f|  %>
         <div class="input-field col s6">
-          <input placeholder="sample title" name="title" type="text" class="validate">
+          <%= f.text_field :title, placeholder: "sample title", class: "validate" %>
           <label for="Title">Title</label>
         </div>
         <div class="input-field col s12">
-          <textarea name="post" class="materialize-textarea"></textarea>
+          <%= f.text_area :post, placeholder: "Write something this", class: "materialize-textarea" %>
           <label for="textarea1">Textarea</label>
         </div>
         <div class="input-field col s12">
@@ -14,6 +14,6 @@
             <i class="material-icons right">send</i>
           </button>
         </div>
-        <% end %>
+      <% end %>
   </div>
 </div>

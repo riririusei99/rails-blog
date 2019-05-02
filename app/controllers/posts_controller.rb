@@ -15,6 +15,6 @@ class PostsController < ApplicationController
 
   private
   def create_params
-    params.permit(:title, :post).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :post).merge(user_id: current_user.id)
   end
 end
