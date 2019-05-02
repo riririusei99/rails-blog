@@ -5,11 +5,11 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
           <li><%= link_to "Post Blog", "posts/new", method: :get %></li>
+          <li><%= link_to "My Page", "users/#{current_user.id}", method: :get %></li>
           <li><%= link_to "Sing out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sing in", new_user_session_path, method: :get  %></li>
         <% end %>
-        <li><%= link_to "My Page", "users/#{current_user.id}", method: :get %></li>
       </ul>
     </div>
   </nav>
