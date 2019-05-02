@@ -1,21 +1,19 @@
 <div class="container"> <!-- 幅とmargin指定する -->
   <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <%= form_for(@post) do |f| %>
-          <div class="input-field col s6">
-            <%= f.text_field :title, placeholder: "Please input Title", class: "validate"  %>
-            <label for="Title">Title</label>
-          </div>
-          <div class="input-field col s12">
-            <%= f.text_area :post, placeholder: "What's are you writing?", class: "materialize-textarea" %>
-            <label >Text</label>
-          </div>
-          <div class="input-field col s12">
-              <%= f.submit "Post it!", class:"btn waves-effect waves-light" %>
-          </div>
+        <%= form_tag('/posts', :method => :post) do %>
+        <div class="input-field col s6">
+          <input placeholder="sample title" name="title" type="text" class="validate">
+          <label for="Title">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea name="post" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+        <div class="input-field col s12">
+          <button class="btn waves-effect waves-light" type="submit">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
         <% end %>
-      </div>
-    </form>
   </div>
 </div>
