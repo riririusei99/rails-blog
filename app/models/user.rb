@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # association
   has_many :posts
+  
+  def your_account?(user)
+    self.id == user.id
+  end
 end
