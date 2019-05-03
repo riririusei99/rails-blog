@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.order('created_at DESC').page(params[:page]).per(5)
+    @posts = Post.order('updated_at DESC').page(params[:page]).per(5)
   end
   
   def show
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(update_params)
-    redirect_to action: :ishow
+    redirect_to action: :index
   end
   
   private
