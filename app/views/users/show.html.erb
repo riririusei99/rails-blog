@@ -7,6 +7,8 @@
     <% end%>
     <h4 class="header">Post list</h4>
     <%= render partial: "posts/post", collection: @posts %>
-    <%= paginate(@posts) %>
+    <div class="row center-align">
+      <%= paginate(@posts) %>
+    </div>
   </div>
 </div>
