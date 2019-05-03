@@ -4,10 +4,11 @@
   </div>
   <div class="card-stacked">
     <div class="card-content">
-      <p>I am a very simple card. I am good at containing small bits of information.</p>
+      <h5><%= user.nickname %></h5>
+      <p><%= user.text %></p>
     </div>
     <div class="card-action">
-      <a href="#">This is a link</a>
+      <%= link_to "#{user.nickname}'s page", user_path(user.id) %>
     </div>
   </div>
 </div>
