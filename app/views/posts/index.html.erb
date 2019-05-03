@@ -1,9 +1,7 @@
-<div class="container"> <!-- 幅とmargin指定する -->
-  <div class="row"> <!-- 行を作る -->
-    <div class="col s12 m8">
+  <div class="row">
+    <div class="col s12 m12">
       <%= render partial: "posts/post", collection: @posts %>
       <%= paginate(@posts) %>
     </div>
   </div>
-</div>
 

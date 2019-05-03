@@ -1,7 +1,7 @@
 <header>
-  <nav class="#42a5f5 blue lighten-1">
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Blog</a>
+  <nav class="blue lighten-1 row">
+    <div class="nav-wrapper col s10 offset-s1">
+      <a href="/" class="brand-logo"><i class="material-icons">border_color</i>Blog</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
           <li><%= link_to "Post Blog", "/posts/new", method: :get %></li>

@@ -1,7 +1,6 @@
-<div class="container"> <!-- 幅とmargin指定する -->
-  <div class="row"> <!-- 行を作る -->
-    <div class="col s12 m7">
-      <h4><%= "#{@user.nickname}さんのマイページ" %></h4>
-    </div>
+<div class="row"> 
+  <div class="col s12 m7">
+    <h4><%= "#{@user.nickname}さんのマイページ" %></h4>
+    <%= link_to "登録情報の編集", edit_user_path(current_user) %>
   </div>
 </div>
