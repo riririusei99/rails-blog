@@ -17,10 +17,12 @@
   </head>
   <body>
     <%= render partial: 'common/header' %>
-    <div class="message-area">
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-    </div>
+    <% if notice != nil || alert != nil %>
+      <div class="message-area">
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+      </div>
+      <% end  %>
     <%= yield %>
   </body>
 </html>
