@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
 
   def index
     @posts = Post.order('updated_at DESC').page(params[:page]).per(5)
