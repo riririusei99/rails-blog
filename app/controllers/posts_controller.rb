@@ -23,10 +23,17 @@ class PostsController < ApplicationController
   end
 
   def update
+    post = Post.find(params[:id])
+    post.update(update_params)
+    redirect_to action: :ishow
   end
   
   private
   def create_params
     params.require(:post).permit(:title, :post).merge(user_id: current_user.id)
+  end
+  
+  def update_params
+    params.require(:post).permit(:title, :post)
   end
 end
