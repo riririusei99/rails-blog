@@ -11,11 +11,7 @@ class User < ApplicationRecord
     self.id == user.id
   end
   
-  def image_path(user)
-    if rails_blob_path(user) != nil
-      return rails_blob_path(user.image)
-    else
-      retun 'image1.jpg'
-    end
+  def image_have?
+    return self.image.attached?
   end
 end
