@@ -9,8 +9,10 @@
         
         <div class="card-action right-align">
           <%= link_to "Show", post_path(post) %>
-          <%= link_to "Edit", edit_post_path(post) %>
-          <%= link_to "Delete", "/posts/#{post.id}", method: :delete %>
+          <% if  user_signed_in? && current_user.id == post.user_id %>
+            <%= link_to "Edit", edit_post_path(post) %>
+            <%= link_to "Delete", "/posts/#{post.id}", method: :delete %>
+          <% end %>
         </div>
       </div>
     </div>
