@@ -18,6 +18,13 @@ class PostsController < ApplicationController
     Post.create(create_params)
   end
   
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+  end
+  
   private
   def create_params
     params.require(:post).permit(:title, :post).merge(user_id: current_user.id)
