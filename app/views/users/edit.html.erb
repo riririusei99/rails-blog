@@ -10,9 +10,13 @@
         <div class="input-field col s6">
           <i class="material-icons prefix">email</i>
           <%= f.text_field :email, placeholder: @user.email , class: "validate" %>
+          <br>
           <label for="email">Email</label>
-          <!--<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>-->
         </div>
+        <div class="input-field col s12">
+        <%= f.text_field :text, placeholder: "free comment" %>
+        <label for="Title">Free text</label>
+
         <div class="input-field col s12">
           <button class="btn waves-effect waves-light" type="submit">Change Profile
             <i class="material-icons right">send</i>
