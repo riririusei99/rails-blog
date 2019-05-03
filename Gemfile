@@ -66,4 +66,4 @@ gem 'pry-rails'
 
 gem 'devise'
 gem 'kaminari'
-gem 'paperclip'
+gem 'mini_magick'
