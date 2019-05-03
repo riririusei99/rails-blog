@@ -24,13 +24,17 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(update_params)
+    if post.your_post?(current_user)
+      post.update(update_params)
+    end
     redirect_to action: :index
   end
   
   def destroy
     post = Post.find(params[:id])
-    post.destroy
+    if post.your_post?(current_user)
+      post.destroy
+    end
     redirect_to action: :index
   end
   
