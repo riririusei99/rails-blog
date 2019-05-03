@@ -17,6 +17,7 @@
   </head>
   <body>
     <%= render partial: 'common/header' %>
+    <div class="container"> 
     <% if notice != nil || alert != nil %>
       <div class="message-area">
        <p class="notice"><%= notice %></p>
@@ -24,5 +25,6 @@
       </div>
       <% end  %>
     <%= yield %>
+    </div>
   </body>
 </html>
