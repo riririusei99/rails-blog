@@ -10,4 +10,12 @@ class User < ApplicationRecord
   def your_account?(user)
     self.id == user.id
   end
+  
+  def image_path(user)
+    if rails_blob_path(user) != nil
+      return rails_blob_path(user.image)
+    else
+      retun 'image1.jpg'
+    end
+  end
 end

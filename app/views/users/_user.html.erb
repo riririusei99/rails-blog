@@ -2,7 +2,11 @@
   <div class="col s12 m12">
     <div class="card horizontal">
       <div class="card-image col s2">
-        <%= image_tag rails_blob_path(user.image), class:"profile-img" %>
+        <% if !user.image.attached? %>
+          <%= image_tag 'image1.jpg' %>
+        <% else %>
+          <%= image_tag rails_blob_path(user.image), class:"profile-img" %>
+        <% end %>
       </div>
       <div class="card-stacked col s10">
         <div class="card-content">
