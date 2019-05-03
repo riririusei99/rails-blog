@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: :sign_in
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:posts).find(params[:id])
+    @posts = Post.order('created_at DESC').where(user_id: params[:id]).page(params[:page]).per(5)
   end
   
   def edit
@@ -20,6 +21,6 @@ class UsersController < ApplicationController
   
   private
   def update_params
-    params.require(:user).permit(:nickname, :email)
+    params.require(:user).permit(:nickname, :email, :text)
   end
 end

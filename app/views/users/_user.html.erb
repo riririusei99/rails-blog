@@ -1,0 +1,14 @@
+<div class="card horizontal">
+  <div class="card-image">
+    <%= image_tag 'image1.jpg' %>
+  </div>
+  <div class="card-stacked">
+    <div class="card-content">
+      <h5><%= user.nickname %></h5>
+      <p><%= user.text %></p>
+    </div>
+    <div class="card-action">
+      <%= link_to "show more", user_path(user.id) %>
+    </div>
+  </div>
+</div>

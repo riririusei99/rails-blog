@@ -3,11 +3,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.order('updated_at DESC').page(params[:page]).per(5)
+    @posts = Post.includes(:user).order('updated_at DESC').page(params[:page]).per(5)
   end
   
   def show
-    @post = Post.where(id: params[:id])
+    @post = Post.includes(:user).find(params[:id])
+    @user = @post.user
   end
   
   def new
