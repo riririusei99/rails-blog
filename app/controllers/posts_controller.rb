@@ -28,6 +28,12 @@ class PostsController < ApplicationController
     redirect_to action: :index
   end
   
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to action: :index
+  end
+  
   private
   def create_params
     params.require(:post).permit(:title, :post).merge(user_id: current_user.id)
