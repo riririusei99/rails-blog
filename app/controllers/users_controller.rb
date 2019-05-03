@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: :sign_in
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:posts).find(params[:id])
+    @posts = User.find(params[:id]).posts
   end
   
   def edit
