@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.where(id: params[:id])
+    @post = Post.includes(:user).find(params[:id])
+    @user = @post.user
   end
   
   def new
