@@ -1,27 +1,29 @@
-  <div class="row ">
-    <%= form_for @user do |f|  %>
-    <!--<form class="col s12">-->
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <%= f.text_field :nickname, placeholder: @user.nickname , class: "validate" %>
-          <label for="icon_prefix">Nickame</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">email</i>
-          <%= f.text_field :email, placeholder: @user.email , class: "validate" %>
-          <br>
-          <label for="email">Email</label>
-        </div>
-        <div class="input-field col s12">
+<div class="row ">
+  <%= form_for @user do |f|  %>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <%= f.text_field :nickname, placeholder: @user.nickname , class: "validate" %>
+        <label for="icon_prefix">Nickame</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">email</i>
+        <%= f.text_field :email, placeholder: @user.email , class: "validate" %>
+        <br>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field col s12">
         <%= f.text_field :text, placeholder: "free comment" %>
         <label for="Title">Free text</label>
-
-        <div class="input-field col s12">
-          <button class="btn waves-effect waves-light" type="submit">Change Profile
-            <i class="material-icons right">send</i>
-          </button>
-        </div>
       </div>
-    <% end %>
-  </div>
+      <div class="input-field col s12">
+        <%= f.file_field :image,placeholder: "upload image file" %>
+      </div>
+      <div class="input-field col s12">
+        <button class="btn waves-effect waves-light" type="submit">Change Profile
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>
