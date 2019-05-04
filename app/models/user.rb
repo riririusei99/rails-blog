@@ -6,7 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # association
   has_many :posts
-  
+
+  # validation
+  validates :nickname, presence: true, length: { maximum: 6 }
+
   def your_account?(user)
     self.id == user.id
   end
