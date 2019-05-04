@@ -36,4 +36,41 @@ describe PostsController do
     end
   end
 
+  describe 'GET #index' do
+    it "populates an array of posts ordered by updated_at DESC" do
+      user = create(:user)
+      posts = create_list(:post, 3, user_id: user.id) 
+      get :index
+      expect(assigns(:posts)).to match(posts.sort{ |a, b| b.updated_at <=> a.updated_at } )
+    end
+
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
+    end
+  end
+
+  describe 'GET #show' do
+    it "get correct post" do
+      user = create(:user)
+      post = create(:post, user_id: user.id) 
+      get :show,  params: { id: post.id }
+      expect(assigns(:post)).to eq post
+    end
+    
+    it "get correct user" do
+      user = create(:user)
+      post = create(:post, user_id: user.id) 
+      get :show,  params: { id: post.id }
+      expect(assigns(:user)).to eq user
+    end
+
+    it "renders the :index template" do
+      user = create(:user)
+      post = create(:post, user_id: user.id) 
+      get :show,  params: { id: post.id }
+      expect(response).to render_template :show
+    end
+  end
+
 end
