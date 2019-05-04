@@ -1,24 +1,20 @@
 # README
+## このアプリについて
+Railsの勉強用に作成したオリジナルサンプルアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User機能
+- ログイン/ログアウト機能
+- マイページの確認
+- プロフィールの編集
+- アバター画像の登録
 
-Things you may want to cover:
+Post機能
+ユーザ登録をすると閲覧意外の機能が利用できます。
+- 投稿の閲覧
+- 投稿の作成
+- 投稿の編集
+- 投稿の削除
 
-* Ruby version
+## デモ画像
+![デモ画像](https://github.com/riririusei99/rails-blog/blob/master/demo/demo.gif)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
