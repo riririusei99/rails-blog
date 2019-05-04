@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :posts
 
   # validation
-  validates :nickname, presence: true, length: { maximum: 6 }
+  validates :nickname, presence: true, length: { maximum: 12 }
 
   def your_account?(user)
     self.id == user.id
